@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>IAY Company</title>
+    <link rel="shortcut icon" type="image/png" href="imagess/logo.jpg">
+    <style>
+        /* CSS for the sidebar */
+        .sidebar {
+            height: 100%;
+            width: 200px; /* Smaller width */
+            position: fixed;
+            top: 0;
+            right: 0; /* Position on the right */
+            background-color: #333;
+            padding-top: 20px;
+            display: none; /* Hidden by default */
+            z-index: 1000; /* Ensure it appears above other content */
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5); /* Optional shadow effect */
+            transition: transform 0.3s ease; /* Smooth transition */
+            transform: translateX(100%); /* Start hidden off-screen */
+        }
+
+        .sidebar.open {
+            display: block; /* Make it visible */
+            transform: translateX(0); /* Slide it in */
+        }
+
+        .sidebar a {
+            padding: 15px;
+            text-align: center;
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .sidebar .closebtn {
+            font-size: 24px; /* Larger for visibility */
+            color: darkgoldenrod;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            left: 20px; /* Position on the left inside the sidebar */
+        }
+
+        .sidebar .login-options {
+            padding-top: 60px; /* Adjusted to make space for the close button */
+        }
+
+        .openbtn {
+            font-size: 24px; /* Larger for visibility */
+            cursor: pointer;
+            color: darkgoldenrod; /* Color for the lines */
+            background: none;
+            border: none;
+            position: fixed;
+            top: 20px;
+            right: 20px; /* Position on the right */
+            z-index: 1001; /* Ensure it appears above other content */
+        }
+
+        .openbtn .bar {
+            display: block;
+            width: 30px;
+            height: 3px;
+            background-color: darkgoldenrod; /* Line color */
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo">IAY Company</a>
+        <button class="openbtn" onclick="toggleSidebar()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </button>
+        <nav class="navigation">
+            <a href="#Home">Home</a>
+            <a href="#AboutUs">About us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    
+
+    <div class="sidebar" id="mySidebar">
+        <span class="closebtn" onclick="toggleSidebar()">&times;</span>
+        <div class="login-options">
+            <a href="#">Login</a>
+            <a href="#">Sign In</a>
+        </div>
+    </div>
+
+    <section class="main" id="Home">
+        <div>
+            <h2><br><span>Building your vision with precision</span></h2>
+            <h3>We take pride in our work and are committed to delivering exceptional results 
+                on every project. We believe in building long-term relationships with our 
+                clients and delivering exceptional value to them.</h3>
+            <a href="#projects" class="main-btn">Learn more</a>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards" id="AboutUs">
+        <h2 class="title">About us</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <div class="info">
+                    <h3>Planning</h3>
+                    <p>We offer tailored project planning, including needs assessment, scope definition, budget management, and risk mitigation to ensure efficient and successful project execution.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-city"></i>
+                </div>
+                <div class="info">
+                    <h3>Construction</h3>
+                    <p>We provide end-to-end construction services, from project planning and design to execution and completion, ensuring quality, timely delivery, and adherence to budget.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <div class="info">
+                    <h3>Engineering Consulting</h3>
+                    <p>We offer expert engineering consulting services, including project planning, design, risk assessment, and optimization to ensure effective and efficient project outcomes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="title">Our Work</h2>
+        <div class="content">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagess/101010.jpg" alt="Project 1"/>
+                </div>
+                <div class="project-info">
+                    <p class="project-category"></p>
+                    <strong class="project-title">
+                        <span></span>
+                        <a href="#" class="more-details"></a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagess/5050.jpg" alt="Project 2"/>
+                </div>
+                <div class="project-info">
+                    <p class="project-category"></p>
+                    <strong class="project-title">
+                        <span></span>
+                        <a href="#" class="more-details"></a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagess/121212.jpg" alt="Project 3"/>
+                </div>
+                <div class="project-info">
+                    <p class="project-category"></p>
+                    <strong class="project-title">
+                        <span></span>
+                        <a href="#" class="more-details"></a>
+                    </strong>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="imagess/Structu1212.jpeg" alt="Project 4"/>
+                </div>
+                <div class="project-info">
+                    <p class="project-category"></p>
+                    <strong class="project-title">
+                        <span></span>
+                        <a href="#" class="more-details"></a>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's work together</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone</h3>
+                    <p>+966541349918</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>E-IAY@outlook.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <p class="footer-title">Saudi Arabia - <span>Medinah</span></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.classList.contains("open")) {
+                sidebar.classList.remove("open");
+            } else {
+                sidebar.classList.add("open");
+            }
+        }
+    </script>
+</body>
+</html>
